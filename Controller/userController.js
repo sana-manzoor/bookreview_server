@@ -50,7 +50,7 @@ exports.userLoginController = async (req, res) => {
 
 exports.getAllusers=async(req,res)=>{
     try{
-        const result=await users.find()
+        const result=await users.find({isAdmin:false})
         res.status(200).json(result)
     }
     catch(err){
